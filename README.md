@@ -1,4 +1,33 @@
-# Hello Friend NG
+# Hello Friend XT
+
+##  WIP
+*The [original theme](https://github.com/panr/hugo-theme-hello-friend) has been archived. I am working on tweaking and updating this theme. If I manage to get it working, I will revamp the readme so everyone can re-use it.*
+- [How to properly import themes as go modules](https://scripter.co/hugo-modules-importing-a-theme/)
+- Single branches can be created for different websites, in case you need to re-use this theme with small changes
+- I need to bring things from the main project readme, such as:
+### Install theme as Hugo Module
+
+```bash
+# If this is the first time you're using Hugo Modules
+# in your project. You have to initiate your own module before
+# you fetch the theme module.
+# '[your-website-git-url]' is just a placeholder for your module name.
+#
+hugo mod init [your-website-git-url]
+hugo mod get github.com/pablods90/hugo-theme-hello-friend-xt
+hugo mod get -u
+```
+
+and in your config file add:
+
+```toml
+[module]
+  # this is needed when you fetch the theme as a submodule to your repo.
+  # replacements = "github.com/pablods90/hugo-theme-hello-friend -> themes/hello-friend"
+[[module.imports]]
+  path = 'github.com/pablods90/hugo-theme-hello-friend'
+```
+***
 
 ![Hello Friend NG](https://dsh.re/d914c)
 
