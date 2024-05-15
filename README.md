@@ -1,58 +1,22 @@
 # Hello Friend XT
 
-##  WIP
-*The [original theme](https://github.com/panr/hugo-theme-hello-friend) has been archived. I am working on tweaking and updating this theme. If I manage to get it working, I will revamp the readme so everyone can re-use it.*
-- [How to properly import themes as go modules](https://scripter.co/hugo-modules-importing-a-theme/)
-- Single branches can be created for different websites, in case you need to re-use this theme with small changes
-- I need to bring things from the main project readme, such as:
-### Install theme as Hugo Module
+This is my extended version (XT), forked and inspired by the [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) theme. Big kudos for the amazing work and contributions! I will keep my own fork as I may add new features and capabilties in the future, but I will try to keep this proyect in sycn with the up-stream as much as possible.
 
-```bash
-# If this is the first time you're using Hugo Modules
-# in your project. You have to initiate your own module before
-# you fetch the theme module.
-# '[your-website-git-url]' is just a placeholder for your module name.
-#
-hugo mod init [your-website-git-url]
-hugo mod get github.com/pablods90/hugo-theme-hello-friend-xt
-hugo mod get -u
-```
-
-and in your config file add:
-
-```toml
-[module]
-  # this is needed when you fetch the theme as a submodule to your repo.
-  # replacements = "github.com/pablods90/hugo-theme-hello-friend -> themes/hello-friend"
-[[module.imports]]
-  path = 'github.com/pablods90/hugo-theme-hello-friend'
-```
-***
-
-![Hello Friend NG](https://dsh.re/d914c)
-
-## General informations
-
-This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for their great work.
-
----
 
 ## Table of Contents
 
 - [Features](#features)
 - [How to start](#how-to-start)
-- [How to configure](#how-to-configure)
-- [More](#more-things)
+- [A few extra details](#a-few-extra-details)
   - [Built in shortcodes](#built-in-shortcodes)
     - [image](#image)
   - [Code highlighting](#code-highlighting)
   - [Favicon](#favicon)
   - [Audio Support](#audio-support)
-- [Social Icons](#social-icons)
+  - [Social Icons](#social-icons)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
 - [Changelog](CHANGELOG.md)
-- [Sponsoring](#sponsoring)
 - [Licence](#licence)
 
 ---
@@ -74,19 +38,74 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 
 ## How to start
 
-You can download the theme manually by going to [https://github.com/rhazdon/hugo-theme-hello-friend-ng.git](https://github.com/rhazdon/hugo-theme-hello-friend-ng.git) and pasting it to `themes/hello-friend-ng` in your root directory.
+⚠️ **The theme needs at least Hugo **Extended** v0.90.x**.
 
-You can also clone it directly to your Hugo folder:
+Therea are basically three main ways of installing and using themes in Hugo, being the [hugo modules](https://gohugo.io/hugo-modules/use-modules/) the most recommended approach. You can also choose **one of the 3 possibilities** to install the theme:
 
-``` bash
-$ git clone https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+1. as Hugo Module (**recommended**)
+2. as a standalone local directory
+3. as a git submodule
+
+### Install theme as Hugo Module
+
+This is the most recommended way as uses Go engine for handling dependencies, which is very well integrated with GitHub. It is the most efficient and clean method for including a remote theme. If you don't intend to apply radical changes to the theme, use this approach.
+
+```bash
+# If this is the first time you're using Hugo Modules
+# in your project. You have to initiate your own module before
+# you fetch the theme module.
+# '[your-website-git-url]' is just a placeholder for your module name.
+#
+hugo mod init [your-website-git-url]
 ```
 
-If you don't want to make any radical changes, it's the best option, because you can get new updates when they are available. To do so, include it as a git submodule:
-
-``` bash
-$ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+Then you need to install the module:
+```bash
+hugo mod get github.com/pablods90/hugo-theme-hello-friend-xt
 ```
+
+and in finally in your config file add:
+
+```toml
+[module]
+  # this is needed when you fetch the theme as a submodule to your repo.
+  # replacements = "github.com/pablods90/hugo-theme-hello-friend -> themes/hello-friend"
+[[module.imports]]
+  path = 'github.com/pablods90/hugo-theme-hello-friend'
+```
+
+If at any stage you update the theme repository, you will need to update local modules to pull the changes. You can do this as follows:
+
+```bash
+hugo mod get -u
+```
+
+Keep in mind that the theme by default won't show up in the `themes` directory. This means that you are using the theme as it was on the repository at the moment you fetched it. Your local `go.sum` file keeps all the references, so you can commit it to your repository. Read more about Hugo Modules in the [official documentation](https://gohugo.io/hugo-modules/).
+
+⚠️ If you encounter any issues with:
+
+```bash
+Error: module "hello-friend" not found; either add it as a Hugo Module or store it in "[...your custom path]/themes".: module does not exist
+```
+then please try to remove `theme = "hello-friend"` from your config file.
+
+### Install theme locally
+
+```bash
+git clone https://github.com/pablods90/hugo-theme-hello-friend-xt.git themes/hello-friend
+```
+
+This will clone the repository directly to the `themes/hello-friend` directory. This is good for local development as well as integrating the theme itself as part of your website.
+
+
+### Install theme as a submodule
+
+```bash
+git submodule add -f https://github.com/pablods90/hugo-theme-hello-friend-xt.git themes/hello-friend
+```
+
+This will install the repository as a sumbodule in the `themes/hello-friend` directory. I do not encourage this approach, as dealing with git sub-modules is not optimal and requires extra steps and two nested repositories. If you intend to keep the theme decoupled, my advice would be to use Hugo Modules (step 1).
+
 
 ## How to configure
 
@@ -154,7 +173,7 @@ paginate     = 10
     url        = "/posts"
 ```
 
-## More things
+## A few extra details
 
 ### Built-in shortcodes
 
@@ -199,7 +218,7 @@ In your article add to your front matters part:
 audio: path/to/file.mp3
 ```
 
-## Social Icons:
+### Social Icons
 
 A large variety of social icons are available and can be configured like this:
 
@@ -213,30 +232,17 @@ Take a look into this [list](docs/svgs.md) of available icon options.
 
 If you need another one, just open an issue or create a pull request with your wished icon. :)
 
+
 ## Known issues
 
-There is a bug in Hugo that sometimes causes the main page not to render correctly. The reason is an empty taxonomy part.
-Related issue tickets: [!14](https://github.com/rhazdon/hugo-theme-hello-friend-ng/issues/14) [!59](https://github.com/rhazdon/hugo-theme-hello-friend-ng/issues/59).
+Nothing here at the moment! 🚀
 
-Either you comment it out completely or you write the following in
-
-``` toml
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-```
 
 ## How to edit the theme
 
-Just edit it. You don't need any node stuff. ;)
+Just edit it. You don't need any node stuff! Single branches can be created for serving different websites, in case you need to re-use this theme with small changes. Nevertheless, I encourage you to use the local directories in your site for overriding the theme default layouts.
 
-## Sponsoring
-
-If you like my work and if you think this project is worth to support it, just <br />
-<a href="https://www.buymeacoffee.com/djordjeatlialp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
 ## Licence
 
-Copyright © 2019-2021 Djordje Atlialp
-
-The theme is released under the MIT License. Check the [original theme license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.
+The theme is released under the [MIT License](./LICENSE.md). Check the [original theme license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.
