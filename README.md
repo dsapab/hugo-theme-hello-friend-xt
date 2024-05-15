@@ -1,6 +1,6 @@
 # Hello Friend XT
 
-This is my extended version (XT), forked and inspired by the [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) theme. Big kudos for the amazing work and contributions! I will keep my own fork as I may add new features and capabilties in the future, but I will try to keep this proyect in sycn with the up-stream as much as possible.
+This is my extended version (XT), forked and inspired by the [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) theme. Big kudos for the amazing work and contributions! I will keep my own fork as I may add new features and capabilities in the future, but I will try to keep this project in sync with the up-stream as much as possible.
 
 
 ## Table of Contents
@@ -29,7 +29,7 @@ This is my extended version (XT), forked and inspired by the [hello-friend-ng](h
 - An easy way to modify the theme with Hugo tooling
 - Fully responsive
 - Support for audio in posts (thanks to [@talbotp](https://github.com/talbotp))
-- Builtin (enableable/disableable) multilanguage menu
+- Builtin (enable/disable) multi-language menu
 - Support for social icons
 - Support for sharing buttons
 - Support for [Commento](https://commento.io)
@@ -104,7 +104,7 @@ This will clone the repository directly to the `themes/hello-friend` directory. 
 git submodule add -f https://github.com/pablods90/hugo-theme-hello-friend-xt.git themes/hello-friend
 ```
 
-This will install the repository as a sumbodule in the `themes/hello-friend` directory. I do not encourage this approach, as dealing with git sub-modules is not optimal and requires extra steps and two nested repositories. If you intend to keep the theme decoupled, my advice would be to use Hugo Modules (step 1).
+This will install the repository as a sub-module in the `themes/hello-friend` directory. I do not encourage this approach, as dealing with git sub-modules is not optimal and requires extra steps and two nested repositories. If you intend to keep the theme decoupled, my advice would be to use Hugo Modules (step 1).
 
 
 ## How to configure
