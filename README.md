@@ -14,6 +14,7 @@ This is my extended version (XT), forked and inspired by the [hello-friend-ng](h
   - [Favicon](#favicon)
   - [Audio Support](#audio-support)
   - [Social Icons](#social-icons)
+  - [How to add a cover image to your posts](#how-to-add-a-cover-image-to-your-posts)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
 - [Changelog](CHANGELOG.md)
@@ -232,6 +233,16 @@ Take a look into this [list](docs/svgs.md) of available icon options.
 
 If you need another one, just open an issue or create a pull request with your wished icon. :)
 
+### How to add a cover image to your posts
+
+Adding a cover image to your post is simple and there are two options when you edit your `index.md` file in `content/posts/blog-entry-xy/index.md`:
+
+* Use `cover = "/path/to/absolute/img.jpg"` to link an absolute image
+  * Resulting in `https://www.yourpage.com/path/to/absolute/img.jpg`
+* Use `cover = "img.jpg"` and `useRelativeCover = true` to link the image relative to the blog post folder
+  * Resulting in `https://www.yourpage.com/posts/blog-entry-xy/img.jpg`
+* Use `coverAlt = "description of image"` to add custom alt text to the cover image (defaults to post or page title as alt text)
+* Use `coverCaption = "Image Credit to [Barry Bluejeans](https://unsplash.com/)"` to add a caption for the cover image.
 
 ## Known issues
 
